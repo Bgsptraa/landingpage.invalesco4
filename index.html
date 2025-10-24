@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Header dengan Logo dan Navigasi -->
+    <!-- Header dengan Logo di Kiri, Navigasi di Kanan -->
     <header class="site-header">
       <div class="logo">
         <img src="344-SMAN_1_SURABAYA.png" alt="Logo Invalesco" />
@@ -26,8 +26,8 @@
       </nav>
     </header>
 
+    <!-- Hero Section (HANYA background, TANPA <img>) -->
     <main class="main-content" id="home">
-      <img src="invalfix1.2.png" alt="Invalesco 2K25" class="hero-image" />
       <div class="button-container">
         <a
           href="https://invalesco2k25.carrd.co"
@@ -68,15 +68,14 @@
       </div>
     </section>
 
-    <!-- Bagian: Kilas Balik -->
+    <!-- Kilas Balik -->
     <section class="flashback-section" id="flashback">
       <h2>FLASHBACK INVALESCO</h2>
-
       <div class="slider-container">
         <div class="slider">
           <div
             class="slide"
-            style="background-image: url('IMG_0737\ \(1\).png')"
+            style="background-image: url('IMG_0737 (1).png')"
           ></div>
           <div class="slide" style="background-image: url('fb23.jpg')"></div>
         </div>
@@ -91,7 +90,6 @@
     <footer class="contact-footer" id="contactfooter">
       <div class="footer-container">
         <h3>Contact Person</h3>
-
         <div class="social-links">
           <a
             href="https://wa.me/62895329597000"
@@ -105,7 +103,6 @@
             />
             <span>WhatsApp</span>
           </a>
-
           <a
             href="https://tiktok.com/@warga.smasa"
             target="_blank"
@@ -118,7 +115,6 @@
             />
             <span>TikTok</span>
           </a>
-
           <a
             href="https://instagram.com/invalesco2k25"
             target="_blank"
@@ -136,10 +132,8 @@
     </footer>
 
     <script>
-      // Optional: Auto slide dots
       const dots = document.querySelectorAll(".dot");
       let currentIndex = 0;
-
       setInterval(() => {
         dots.forEach((dot) => dot.classList.remove("active"));
         currentIndex = (currentIndex + 1) % dots.length;
