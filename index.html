@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invalesco 2K25</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header dengan Logo dan Navigasi -->
+    <header class="site-header">
+      <div class="logo">
+        <img src="344-SMAN_1_SURABAYA.png" alt="Logo Invalesco" />
+      </div>
+      <nav class="main-nav">
+        <a href="#">Home</a>
+        <a href="#info">Detail Acara</a>
+        <a href="#flashback">Kilas Balik</a>
+        <a href="#contactfooter">Contact</a>
+        <a
+          href="https://invalesco2k25.carrd.co"
+          target="_blank"
+          class="buy-ticket-link"
+          >Beli Tiket</a
+        >
+      </nav>
+    </header>
+
+    <main class="main-content" id="home">
+      <img src="invalfix1.2.png" alt="Invalesco 2K25" class="hero-image" />
+      <div class="button-container">
+        <a
+          href="https://invalesco2k25.carrd.co"
+          target="_blank"
+          class="buy-ticket-button"
+          >BELI TIKET</a
+        >
+      </div>
+    </main>
+
+    <!-- Informasi Lokasi, Tanggal, Waktu -->
+    <section class="info" id="info">
+      <div class="info-box">
+        <div class="location-container">
+          <img
+            src="expo.png"
+            alt="Jatim Expo Surabaya"
+            class="location-image"
+          />
+          <h4>Lokasi</h4>
+          <p>
+            <a href="https://maps.app.goo.gl/EB7xqkqTJSN2j1ms8" target="_blank"
+              >Jatim Expo Surabaya</a
+            >
+          </p>
+        </div>
+
+        <div class="time-container">
+          <h4>Waktu</h4>
+          <p class="date">
+            <a
+              href="https://calendar.google.com/calendar/u/0/r/day/2025/10/20"
+              target="_blank"
+              >20 Oktober 2025</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian: Kilas Balik -->
+    <section class="flashback-section" id="flashback">
+      <h2>FLASHBACK INVALESCO</h2>
+
+      <div class="slider-container">
+        <div class="slider">
+          <div
+            class="slide"
+            style="background-image: url('IMG_0737\ \(1\).png')"
+          ></div>
+          <div class="slide" style="background-image: url('fb23.jpg')"></div>
+        </div>
+        <div class="dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Kontak -->
+    <footer class="contact-footer" id="contactfooter">
+      <div class="footer-container">
+        <h3>Contact Person</h3>
+
+        <div class="social-links">
+          <a
+            href="https://wa.me/62895329597000"
+            target="_blank"
+            class="social-item whatsapp"
+          >
+            <img
+              src="pngtree-whatsapp-icon-png-image_6315990.png"
+              alt="WhatsApp"
+              class="icon"
+            />
+            <span>WhatsApp</span>
+          </a>
+
+          <a
+            href="https://tiktok.com/@warga.smasa"
+            target="_blank"
+            class="social-item tiktok"
+          >
+            <img
+              src="tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png.webp"
+              alt="TikTok"
+              class="icon"
+            />
+            <span>TikTok</span>
+          </a>
+
+          <a
+            href="https://instagram.com/invalesco2k25"
+            target="_blank"
+            class="social-item instagram"
+          >
+            <img
+              src="pngtree-instagram-icon-instagram-logo-png-image_3584852.png"
+              alt="Instagram"
+              class="icon"
+            />
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Optional: Auto slide dots
+      const dots = document.querySelectorAll(".dot");
+      let currentIndex = 0;
+
+      setInterval(() => {
+        dots.forEach((dot) => dot.classList.remove("active"));
+        currentIndex = (currentIndex + 1) % dots.length;
+        dots[currentIndex].classList.add("active");
+      }, 5000);
+    </script>
+  </body>
+</html>
