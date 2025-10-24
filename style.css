@@ -7,8 +7,10 @@
 body {
   font-family: "Arial", sans-serif;
   background-color: #242424;
-  color: #242424;
+  color: white;
   overflow-x: hidden;
+  padding-top: 80px;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -21,12 +23,13 @@ a:hover {
   color: #4facfe;
 }
 
-/* ——— NAVBAR ——— */
+/* Header */
 .site-header {
   display: flex;
-  justify-content: space-between; /* Logo kiri, nav kanan */
+  justify-content: space-between;
   align-items: center;
-  padding: 15px 5%;
+  flex-wrap: wrap;
+  padding: 10px 20px;
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -37,25 +40,26 @@ a:hover {
 }
 
 .logo img {
-  height: 60px;
+  height: 50px;
+  max-width: 150px;
+  object-fit: contain;
 }
 
 .main-nav {
   display: flex;
-  gap: 20px;
-  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 0;
 }
 
 .main-nav a {
   font-weight: bold;
-  color: #000;
   padding: 8px 12px;
-  border-radius: 4px;
-}
-
-.main-nav a:hover {
-  color: #007bff;
-  background-color: #f0f8ff;
+  color: #000;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .buy-ticket-link {
@@ -65,7 +69,12 @@ a:hover {
   background-color: transparent;
   color: #007bff;
   font-weight: bold;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 .buy-ticket-link:hover {
@@ -74,46 +83,62 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* ——— HERO SECTION ——— */
+/* Hero Section */
 .main-content {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.hero-wrapper {
   position: relative;
-  height: 100vh;
-  background-image: url("invalfix1.2.png"); /* ← SATU-SATUNYA PERUBAHAN */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 90px; /* Sesuaikan dengan tinggi navbar */
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: 0 80px 80px;
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-height: 600px;
+  border-radius: 12px;
+  user-select: none;
+  padding-top: 40px;
 }
 
 .button-container {
-  /* Tidak perlu position absolute jika pakai flex */
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  z-index: 10;
 }
 
 .buy-ticket-button {
   background: linear-gradient(90deg, #4facfe, #00f2fe);
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  padding: 15px 40px;
-  border: none;
+  padding: 12px 30px;
   border-radius: 12px;
-  cursor: pointer;
   text-transform: uppercase;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  min-width: 200px;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
 }
 
-/* ——— INFO ——— */
+.buy-ticket-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Info Box */
 .info {
   text-align: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: #f9f9f9;
   color: #333;
 }
@@ -125,30 +150,35 @@ a:hover {
   max-width: 800px;
   margin: 0 auto;
   background: white;
-  padding: 40px;
+  padding: 30px 20px;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-.location-container, .time-container {
-  margin: 15px 0;
+.location-container,
+.time-container {
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .location-image {
-  width: 150px;
+  width: 140px;
   height: auto;
   margin-bottom: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-h4 {
+.location-container h4,
+.time-container h4 {
   margin-bottom: 5px;
   color: #000;
   font-size: 1.2rem;
 }
 
-p {
+.location-container p,
+.time-container p {
   margin: 0;
   color: #007bff;
   font-weight: 600;
@@ -156,21 +186,22 @@ p {
 }
 
 .date {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #007bff;
+  margin-top: 10px;
 }
 
-/* ——— FLASHBACK ——— */
+/* Flashback Section */
 .flashback-section {
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
   background-color: #1a1a1a;
   color: white;
 }
 
 .flashback-section h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 15px;
   color: #00f2fe;
   text-transform: uppercase;
@@ -178,14 +209,13 @@ p {
 }
 
 .slider-container {
-  width: 100%;
   max-width: 800px;
-  height: 500px;
+  height: 350px;
   margin: 0 auto;
-  position: relative;
-  overflow: hidden;
   border-radius: 12px;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
 .slider {
@@ -201,17 +231,26 @@ p {
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
+  user-select: none;
 }
 
 @keyframes slide {
-  0%, 45% { transform: translateX(0); }
-  50%, 95% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0%,
+  45% {
+    transform: translateX(0);
+  }
+  50%,
+  95% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -223,43 +262,51 @@ p {
   height: 12px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .dot.active {
   background-color: white;
 }
 
-/* ——— FOOTER ——— */
+/* Footer Kontak */
 .contact-footer {
   background-color: white;
   color: #333;
-  padding: 50px 20px;
+  padding: 40px 20px;
   text-align: center;
   margin-top: 60px;
   border-top: 1px solid #eee;
+  font-family: "Arial", sans-serif;
 }
 
 .footer-container h3 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin-bottom: 20px;
   color: #007bff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 25px;
   flex-wrap: wrap;
+  list-style: none;
 }
 
 .social-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
   color: #333;
   font-weight: 500;
-  width: 90px;
-  transition: transform 0.3s;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  width: 75px;
 }
 
 .social-item:hover {
@@ -268,9 +315,10 @@ p {
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   margin-bottom: 8px;
+  transition: all 0.3s ease;
   border-radius: 8px;
   opacity: 0.9;
 }
@@ -278,4 +326,132 @@ p {
 .social-item:hover .icon {
   transform: scale(1.1);
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .buy-ticket-button {
+    font-size: 1.4rem;
+    padding: 10px 25px;
+    min-width: 140px;
+  }
+
+  .info-box {
+    padding: 25px 15px;
+  }
+
+  .location-image {
+    width: 120px;
+  }
+
+  .footer-container h3 {
+    font-size: 1.3rem;
+  }
+
+  .social-links {
+    gap: 20px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .social-item {
+    font-size: 0.8rem;
+    width: 70px;
+  }
+
+  .flashback-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .slider-container {
+    height: 280px;
+  }
+
+  .button-container {
+    bottom: 18px;
+    left: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: space-around;
+    gap: 6px;
+  }
+
+  .main-nav a {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+  }
+
+  .buy-ticket-button {
+    font-size: 1.2rem;
+    padding: 8px 20px;
+    min-width: 120px;
+  }
+
+  .info-box {
+    padding: 20px 10px;
+  }
+
+  .location-image {
+    width: 100px;
+  }
+
+  .footer-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .social-links {
+    gap: 15px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .social-item {
+    font-size: 0.75rem;
+    width: 65px;
+  }
+
+  .flashback-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .slider-container {
+    height: 220px;
+  }
+
+  .button-container {
+    bottom: 15px;
+    left: 30px;
+  }
 }
