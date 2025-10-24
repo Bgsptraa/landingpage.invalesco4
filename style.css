@@ -21,11 +21,12 @@ a:hover {
   color: #4facfe;
 }
 
+/* ——— NAVBAR ——— */
 .site-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Logo kiri, nav kanan */
   align-items: center;
-  padding: 20px 20px; /* Kurangi padding kiri-kanan */
+  padding: 15px 5%;
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -35,72 +36,61 @@ a:hover {
   z-index: 1000;
 }
 
+.logo img {
+  height: 60px;
+}
+
 .main-nav {
   display: flex;
-  gap: 15px; /* Kurangi jarak antar menu */
+  gap: 20px;
+  align-items: center;
 }
 
 .main-nav a {
   font-weight: bold;
-  padding: 10px 15px; /* Kurangi padding teks */
   color: #000;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.main-nav a:hover {
+  color: #007bff;
+  background-color: #f0f8ff;
 }
 
 .buy-ticket-link {
-  border: 2px solid #007bff; /* Border biru */
+  border: 2px solid #007bff;
   border-radius: 6px;
   padding: 8px 15px;
   background-color: transparent;
   color: #007bff;
-  text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
 }
 
 .buy-ticket-link:hover {
   background-color: #007bff;
-  color: rgb(255, 255, 255);
+  color: white;
   transform: translateY(-2px);
 }
 
-.logo img {
-  height: 80px;
-}
-
-.main-nav {
-  display: flex;
-  gap: 40px;
-}
-
-.main-nav a {
-  font-weight: bold;
-  padding: 10px 15px;
-  color: #000;
-}
-
-.main-nav a:hover {
-  color: #007bff;
-}
-
+/* ——— HERO SECTION ——— */
 .main-content {
   position: relative;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-  height: 600px;
-  background-image: url("invalfix1.2.png");
+  height: 100vh;
+  background-image: url("invalfix1.2.png"); /* ← SATU-SATUNYA PERUBAHAN */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 110px; /* Jarak dari navbar */
+  margin-top: 90px; /* Sesuaikan dengan tinggi navbar */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 80px 80px;
 }
 
 .button-container {
-  position: absolute;
-  bottom: 80px;
-  left: 80px;
-  z-index: 10;
+  /* Tidak perlu position absolute jika pakai flex */
 }
 
 .buy-ticket-button {
@@ -120,7 +110,7 @@ a:hover {
   min-width: 200px;
 }
 
-/* Informasi Lokasi dan Waktu */
+/* ——— INFO ——— */
 .info {
   text-align: center;
   padding: 60px 20px;
@@ -138,13 +128,10 @@ a:hover {
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-height: 400px;
 }
 
-.location-container {
-  text-align: center;
-  margin-bottom: 20px;
+.location-container, .time-container {
+  margin: 15px 0;
 }
 
 .location-image {
@@ -155,15 +142,13 @@ a:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.location-container h4,
-.time-container h4 {
+h4 {
   margin-bottom: 5px;
   color: #000;
   font-size: 1.2rem;
 }
 
-.location-container p,
-.time-container p {
+p {
   margin: 0;
   color: #007bff;
   font-weight: 600;
@@ -174,10 +159,9 @@ a:hover {
   font-size: 2rem;
   font-weight: bold;
   color: #007bff;
-  margin-top: 10px;
 }
 
-/* Flashback Invalesco */
+/* ——— FLASHBACK ——— */
 .flashback-section {
   padding: 60px 20px;
   text-align: center;
@@ -193,21 +177,14 @@ a:hover {
   letter-spacing: 2px;
 }
 
-.flashback-section p {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin-bottom: 30px;
-}
-
-/* Slider */
 .slider-container {
   width: 100%;
   max-width: 800px;
   height: 500px;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  margin: 0 auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -227,17 +204,9 @@ a:hover {
 }
 
 @keyframes slide {
-  0%,
-  45% {
-    transform: translateX(0);
-  }
-  50%,
-  95% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0%, 45% { transform: translateX(0); }
+  50%, 95% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 .dots {
@@ -254,15 +223,13 @@ a:hover {
   height: 12px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .dot.active {
   background-color: white;
 }
-/* Footer Kontak */
 
+/* ——— FOOTER ——— */
 .contact-footer {
   background-color: white;
   color: #333;
@@ -270,15 +237,12 @@ a:hover {
   text-align: center;
   margin-top: 60px;
   border-top: 1px solid #eee;
-  font-family: "Arial", sans-serif;
 }
 
 .footer-container h3 {
   font-size: 1.6rem;
   margin-bottom: 20px;
   color: #007bff;
-  font-weight: 600;
-  letter-spacing: 0.5px;
 }
 
 .social-links {
@@ -286,19 +250,16 @@ a:hover {
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
-  list-style: none;
 }
 
 .social-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none;
   color: #333;
   font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  width: 90px; /* Kontrol lebar */
+  width: 90px;
+  transition: transform 0.3s;
 }
 
 .social-item:hover {
@@ -310,7 +271,6 @@ a:hover {
   width: 40px;
   height: 40px;
   margin-bottom: 8px;
-  transition: all 0.3s ease;
   border-radius: 8px;
   opacity: 0.9;
 }
@@ -318,57 +278,4 @@ a:hover {
 .social-item:hover .icon {
   transform: scale(1.1);
   opacity: 1;
-}
-
-/* Efek warna ikon */
-.social-item.whatsapp .icon {
-  filter: brightness(1.05);
-}
-
-.social-item.tiktok .icon {
-  filter: brightness(1.1) contrast(1.05);
-}
-
-.social-item.instagram .icon {
-  filter: contrast(1.1);
-}
-
-/* Responsif */
-@media (max-width: 768px) {
-  .footer-container h3 {
-    font-size: 1.4rem;
-  }
-
-  .social-links {
-    gap: 30px;
-  }
-
-  .icon {
-    width: 36px;
-    height: 36px;
-  }
-
-  .social-item {
-    font-size: 0.9rem;
-    width: 80px;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-container h3 {
-    font-size: 1.3rem;
-  }
-
-  .social-links {
-    gap: 25px;
-  }
-
-  .icon {
-    width: 34px;
-    height: 34px;
-  }
-
-  .social-item {
-    width: 75px;
-  }
 }
